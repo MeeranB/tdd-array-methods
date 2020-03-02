@@ -99,3 +99,29 @@ function reduce(array, fn, initialAccumulator) {
   }
   return newAccumulator;
 }
+
+function flat(array) {
+  let flattened = [];
+  for (let i = 0; i < array.length; i++) {
+    const el = array[i];
+    if (Array.isArray(el)) {
+      flattened = flattened.concat(el); // concat merges two arrays
+    } else {
+      flattened.push(el);
+    }
+  }
+  return flattened;
+}
+
+function flat(array) {
+  let flattened = [];
+  for (let i = 0; i < array.length; i++) {
+    const el = array[i];
+    if (Array.isArray(el)) {
+      flattened = flattened.concat(flat(el)); // recursively call flat again
+    } else {
+      flattened.push(el);
+    }
+  }
+  return flattened;
+}
