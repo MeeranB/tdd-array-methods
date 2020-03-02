@@ -113,12 +113,13 @@ function flat(array) {
   return flattened;
 }
 
-function flat(array) {
+function flat(array, depth = 1) {
   let flattened = [];
   for (let i = 0; i < array.length; i++) {
     const el = array[i];
-    if (Array.isArray(el)) {
-      flattened = flattened.concat(flat(el)); // recursively call flat again
+    // we need to deal with nested arrays (if we haven't hit our depth limit)
+    if (Array.isArray(el) && depth > 0) {
+      flattened = flattened.concat(flat(el), depth - 1); // recursively call flat again, and lower depth by 1 each time
     } else {
       flattened.push(el);
     }

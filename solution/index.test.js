@@ -93,8 +93,8 @@ test("flat() should turn a nested array into a single-level array", t => {
   t.equal(result[2], 3);
 });
 
-test("flat() should turn a nested array containing nested arrays into a single-level array", t => {
-  const result = flat([1, [2, [3]]]);
+test("flat() should flatten nested arrays 2 levels deep", t => {
+  const result = flat([1, [2, [3]]], 2);
   t.equal(result[0], 1);
   t.equal(result[1], 2);
   t.equal(result[2], 3);
