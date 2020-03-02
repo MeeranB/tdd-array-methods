@@ -29,3 +29,73 @@ function map(array, fn) {
 
   return newArray;
 }
+
+function filter(array, fn) {
+  const filteredArray = [];
+  for (let i = 0; i < array.length; i++) {
+    const el = array[i];
+    const shouldKeep = fn(el, i);
+    if (shouldKeep) filteredArray.push(el);
+  }
+  return filteredArray;
+}
+
+// function every(array, fn) {
+//   let result = true;
+//   for (let i = 0; i < array.length; i++) {
+//     const el = array[i];
+//     result = fn(el, i);
+//   }
+//   return result;
+// }
+
+function every(array, fn) {
+  let result = true;
+  for (let i = 0; i < array.length; i++) {
+    const el = array[i];
+    result = fn(el, i);
+    if (!result) break; // need to stop if an element fails
+  }
+  return result;
+}
+
+function some(array, fn) {
+  let result = false;
+  for (let i = 0; i < array.length; i++) {
+    const el = array[i];
+    result = fn(el, i);
+    if (result) break; // need to stop if an element fails
+  }
+  return result;
+}
+
+function find(array, fn) {
+  for (let i = 0; i < array.length; i++) {
+    const el = array[i];
+    const match = fn(el, i);
+    if (match) {
+      return el;
+    } else {
+      return undefined;
+    }
+  }
+}
+
+// function reduce(array, fn, initialAccumulator) {
+//   let newAccumulator = initialAccumulator; // starting value
+//   for (let i = 0; i < array.length; i++) {
+//     const el = array[i];
+//     newAccumulator = fn(newAccumulator, el, i); // fn should return new acc each time
+//   }
+//   return newAccumulator;
+// }
+
+function reduce(array, fn, initialAccumulator) {
+  let newAccumulator = initialAccumulator || array[0]; // starting value
+  let startCount = initialAccumulator ? 0 : 1; // if no acc passed we skip first iteration
+  for (let i = startCount; i < array.length; i++) {
+    const el = array[i];
+    newAccumulator = fn(newAccumulator, el, i); // fn should return new acc each time
+  }
+  return newAccumulator;
+}

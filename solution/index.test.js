@@ -23,3 +23,63 @@ test("Map should pass item index in to function argument", t => {
   t.equal(result[0], "hello-0");
   t.equal(result[1], "world-1");
 });
+
+// testing filter()
+
+test("Filter should return an array with the same elements if they all pass the test", t => {
+  const result = filter([1], () => true);
+  t.equal(result[0], 1);
+});
+
+test("Filter should remove elements that don't pass the test from the array", t => {
+  const result = filter([1, 100], x => x > 10);
+  t.equal(result[0], 100);
+});
+
+// testing every()
+
+test("Every should return true if every element passes the test", t => {
+  const result = every([100, 200], x => x > 10);
+  t.equal(result, true);
+});
+
+test("Every should return false if any element fails the test", t => {
+  const result = every([1, 100], x => x > 10);
+  t.equal(result, false);
+});
+
+// testing some()
+
+test("Some should return true if any element passes the test", t => {
+  const result = some([100, 200], x => x > 10);
+  t.equal(result, true);
+});
+
+test("Some should return false if every element fails the test", t => {
+  const result = some([1, 2], x => x > 10);
+  t.equal(result, false);
+});
+
+// testing find()
+
+test("Find should return the first element that passes the test", t => {
+  const result = find([100, 200], x => x > 10);
+  t.equal(result, 100);
+});
+
+test("Find should return the undefined if no element passes the test", t => {
+  const result = find([1, 2], x => x > 10);
+  t.equal(result, undefined);
+});
+
+// testing reduce()
+
+test("Reduce should call the fn for each element and use the return value as the new accumulator", t => {
+  const result = reduce([1, 2, 3], (total, x) => total + x, 0);
+  t.equal(result, 6);
+});
+
+test("Reduce should use the first element of array if no accumulator passed", t => {
+  const result = reduce([1, 2, 3], (total, x) => total + x);
+  t.equal(result, 6);
+});
