@@ -174,8 +174,8 @@ reduce([1, 2, 3], (total, x) => total + x, 0); // 6
 Use TDD to write your own `flat` function that behaves like the built-in one. The only difference should be that yours takes the array as the first argument:
 
 ```js
-[1, [2, 3]].flat(); // [1, 2, 3]
-[1, [2, [3]]].flat(2); // [1, 2, 3]
+flat([1, [2, 3]]); // [1, 2, 3]
+flat([1, [2, [3]]], 2); // [1, 2, 3]
 ```
 
 **Hint**: recursion or `while` loops will be helpful.
