@@ -150,10 +150,13 @@ find([1, 2, 3], x => x > 1); // 2
 
 ### `reduce`
 
-[`Array.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) is used to transform an array into a single value. It takes a function and optional inital "accumulator" value as arguments. This function is called with the current accumulator value and each item in the array in turn. Whatever you return from the function is used as the accumulator value for the next iteration. After the final element the final accumulator value is returned.
+[`Array.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) is used to transform an array into a single value. It takes a function and an inital "accumulator" value as arguments. This function is called with the current accumulator value and each item in the array in turn. Whatever you return from the function is used as the accumulator value for the next iteration. After the final element the final accumulator value is returned.
 
 ```js
-[1, 2, 3].reduce((total, x) => total + x, 0); // 6
+[1, 2, 3].reduce((total, x) => total + x, 0);
+// 1st loop (total = 0, x = 1) => 0 + 1; returns new total: 1
+// 2nd loop (total = 1, x = 2) => 1 = 2; returns new total: 3
+// 3rd loop (total = 3, x = 3) => 3 + 3; returns new total: 6
 ```
 
 Use TDD to write your own `reduce` function that behaves like the built-in one. The only difference should be that yours takes the array as the first argument:
