@@ -75,6 +75,7 @@ We're going to re-implement some useful JavaScript array methods using TDD. For 
 1. Clone this repo
 1. Open `index.html` in your browser
 1. Alternate writing tests and code in `index.test.js` and `index.js`
+1. You can see test results in the console
 
 ### `map`
 
