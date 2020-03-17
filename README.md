@@ -109,7 +109,7 @@ filter([1, 2, 3], x => x > 1); // [2, 3]
 
 ### `every`
 
-[`Array.every()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every) is used to check whether every element in an array meets a certain criteria. It takes a function as an argument, which is called with each item in the array in turn. If the function returns false for _any_ of the elements the iteration stops and `false` is immediately returned. If the function returns true for _every_ element then `false` is returned.
+[`Array.every()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every) is used to check whether every element in an array meets a certain criteria. It takes a function as an argument, which is called with each item in the array in turn. If the function argument returns false for _any_ of the elements the iteration stops and `false` is immediately returned. If the function argument returns true for _every_ element then `true` is returned.
 
 ```js
 [1, 2, 3].every(x => x > 0); // true
@@ -123,7 +123,7 @@ every([1, 2, 3], x => x > 0); // true
 
 ### `some`
 
-[`Array.some()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) is used to check whether at least one element in an array meets a certain criteria. It takes a function as an argument, which is called with each item in the array in turn. If the function returns true for _any_ of the elements the iteration stops and `true` is immediately returned. If the function returns false for _some_ element then `false` is returned.
+[`Array.some()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) is used to check whether at least one element in an array meets a certain criteria. It takes a function as an argument, which is called with each item in the array in turn. If the function argument returns true for _any_ of the elements the iteration stops and `true` is immediately returned. If the function argument returns false for _some_ element then `false` is returned.
 
 ```js
 [1, 2, 3].some(x => x > 2); // true
