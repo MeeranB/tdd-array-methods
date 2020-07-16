@@ -66,6 +66,8 @@ function double(x) {
 
 This solution looks complete, so we can end the cycle here. It might be worth adding more tests for edge-cases, but TDD has helped us solve the problem itself.
 
+If you're confused about the TDD process at the end of the workshop you can check out the [tdd-explanation](./solutions/tdd-explanation.js) solution for a step-by-step guide.
+
 ## Workshop
 
 We're going to re-implement some useful JavaScript array methods using TDD. For each method you should use TDD to **write tests first**, then write the actual code. Work in pairs and alternate: person 1 writes a test, then person 2 makes it pass. Then person 2 writes the next test and person 1 makes that pass.
