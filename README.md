@@ -66,7 +66,7 @@ function double(x) {
 
 This solution looks complete, so we can end the cycle here. It might be worth adding more tests for edge-cases, but TDD has helped us solve the problem itself.
 
-If you're confused about the TDD process at the end of the workshop you can check out the [tdd-explanation](./solutions/tdd-explanation.js) solution for a step-by-step guide.
+If you're confused about the TDD process at the end of the workshop you can check out the [tdd-explanation](./solution/tdd-explanation.js) solution for a step-by-step guide.
 
 ## Workshop
 
